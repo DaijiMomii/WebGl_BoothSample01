@@ -10,10 +10,7 @@
   <body>
     <div id="unity-container" class="unity-desktop">
       <div id="buttons">
-        <!-- <button id="testButton_sub" type="button">クリック1</button> -->
         <button id="startButton" type="button">Start</button>
-        <!-- <button id="testButton" type="button">動画再生</button>
-        <button id="readyButton" type="button">Ready</button> -->
       </div>
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -37,10 +34,7 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
-      // var testButtonSub = document.querySelector("#testButton_sub");
       var startButton = document.querySelector("#startButton");
-      // var testButton = document.querySelector("#testButton");
-      // var readyButton = document.querySelector("#readyButton");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -116,8 +110,8 @@
       script.src = loaderUrl;
       script.onload = () => 
       {
-        startButton.onclick = () => 
-        {
+        // startButton.onclick = () => 
+        // {
           console.log( "START!!!!" );
 
           createUnityInstance(canvas, config, (progress) => 
@@ -153,7 +147,7 @@
             alert(message);
           });
 
-        };
+        // };
         
       };
       document.body.appendChild(script);
