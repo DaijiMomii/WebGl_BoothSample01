@@ -20,4 +20,3 @@ body { padding: 0; margin: 0 }
 #startButton{ position: absolute; left: 10%; top: 10%; transform: translate(-50%, -50%); z-index: 10; pointer-events: auto }
 /* #testButton{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10; pointer-events: auto }
 #readyButton{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -200%); z-index: 10; pointer-events: auto } */
-/* #testButton_sub{ z-index: 20; pointer-events: auto }  */
