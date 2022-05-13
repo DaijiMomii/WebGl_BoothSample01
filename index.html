@@ -9,6 +9,9 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
+        <div id="buttons">
+        <button id="startButton" type="button">Start</button>
+        </div>
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -45,6 +48,8 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var mobileWarning = document.querySelector("#unity-mobile-warning");
 
+      var startButton = document.querySelector("#startButton");
+
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
       // Set this to false if you want to decouple this synchronization from
@@ -70,16 +75,21 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
+
+        startButton.onclick = () => 
+        {
+          console.log( "START!!!!" );
+            createUnityInstance(canvas, config, (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+            }).then((unityInstance) => {
+            loadingBar.style.display = "none";
+            fullscreenButton.onclick = () => {
+                unityInstance.SetFullscreen(1);
+            };
+            }).catch((message) => {
+            alert(message);
+            });
+        }
       };
       document.body.appendChild(script);
     </script>
