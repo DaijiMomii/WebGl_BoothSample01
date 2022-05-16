@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | BoothSample02</title>
-    <script src="windowsResize.js"></script>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=1440 height=900 style="width: 1440px; height: 900px; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
     <script src="Build/Build_BoothSample02.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
@@ -18,7 +17,7 @@
         companyName: "DefaultCompany",
         productName: "BoothSample02",
         productVersion: "0.1",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
