@@ -1,3 +1,5 @@
+'use strict';
+
 var container;
 var canvas;
 var timer = 0;
