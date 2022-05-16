@@ -4,16 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | BoothSample02</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body style="text-align: center">
+    <div id="buttons">
+      <button id="startButton" type="button">Start</button>
+    </div>
     <!-- <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas> -->
     <canvas id="unity-canvas" style="background: #231F20"></canvas>
     <script src="Build/Build_BoothSample02.loader.js"></script>
     <script>
 
       var _canvas = document.getElementById("unity-canvas");
-      _canvas.width = document.documentElement.clientWidth - 1;
-      _canvas.height = document.documentElement.clientHeight - 1;
+      _canvas.width = document.documentElement.clientWidth;
+      _canvas.height = document.documentElement.clientHeight;
 
       createUnityInstance
       (
@@ -58,6 +62,9 @@
       function()
       {
         console.log( "resize-->" );
+        // var _canvas = document.getElementById("unity-canvas");
+        // _canvas.width = document.documentElement.clientWidth - 1;
+        // _canvas.height = document.documentElement.clientHeight - 1;
       }
     </script>
   </body>
