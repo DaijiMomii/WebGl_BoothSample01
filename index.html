@@ -9,7 +9,13 @@
     <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
     <script src="Build/Build_BoothSample02.loader.js"></script>
     <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
+
+      var _canvas = document.getElementById("unity-canvas");
+      _canvas.width = document.documentElement.clientWidth - 10;
+      _canvas.height = document.documentElement.clientHeight - 10;
+
+      createUnityInstance(document.querySelector("#unity-canvas"), 
+      {
         dataUrl: "Build/Build_BoothSample02.data.unityweb",
         frameworkUrl: "Build/Build_BoothSample02.framework.js.unityweb",
         codeUrl: "Build/Build_BoothSample02.wasm.unityweb",
@@ -20,6 +26,12 @@
         matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
+
+      window.onresize = 
+      function()
+      {
+        console.log( "resize-->" );
+      }
     </script>
   </body>
 </html>
