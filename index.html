@@ -12,12 +12,25 @@
     </div>
     <!-- <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas> -->
     <canvas id="unity-canvas" style="background: #231F20"></canvas>
+
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full"></div>
+      </div>
+    </div>
+
     <script src="Build/Build_BoothSample02.loader.js"></script>
     <script>
 
       var _canvas = document.getElementById("unity-canvas");
       _canvas.width = document.documentElement.clientWidth;
       _canvas.height = document.documentElement.clientHeight;
+
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+
+      loadingBar.style.display = "block";
 
       createUnityInstance
       (
@@ -35,14 +48,15 @@
         }, 
         (progress) => 
         {
-          console.log( progress + "%" );
+          // console.log( progress + "%" );
+          progressBarFull.style.width = 100 * progress + "%";
         }
       )
       .then
       (
         (unityInstance) => 
         {
-          // loadingBar.style.display = "none";
+          loadingBar.style.display = "none";
           // fullscreenButton.onclick = () => 
           // {
           //     unityInstance.SetFullscreen(1);
