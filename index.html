@@ -6,11 +6,11 @@
     <title>Unity WebGL Player | BoothSample02</title>
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-  
   <body > <!-- style="text-align: top" -->
     <div id="buttons">
       <button id="startButton" type="button">Start</button>
-      <button id="linkButton" type=“button” onclick="location.href='https://daijimomii.github.io/WebGl_PVSample_Info/'">ページリンク</button>
+      <!-- <button id="linkButton" type=“button” onclick="location.href='https://daijimomii.github.io/WebGl_PVSample_Info/'">ページリンク</button> -->
+      <button id="linkButton" type=“button” >ページリンク</button>
     </div>
     
     <div id="contentstitle">
@@ -18,17 +18,13 @@
     </div>
 
     <!-- <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas> -->
-    <div id="unity">
-      <canvas id="unity-canvas" style="background: #231F20"></canvas>
+    <canvas id="unity-canvas" style="background: #231F20"></canvas>
 
-
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full"></div>
       </div>
-
     </div>
 
     <script src= "Build/Build_BoothSample02_Home.loader.js"></script>
@@ -42,7 +38,15 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
 
+      var startButton = document.querySelector("#startButton");
+      var linkButton = document.querySelector("#linkButton");
+
       loadingBar.style.display = "block";
+
+      linkButton.onclick = () => 
+      {
+        window.alert( "Link クリック" ); 
+      }
 
       startButton.onclick = () => 
       {
