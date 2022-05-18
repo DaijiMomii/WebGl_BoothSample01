@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <script src= "Build/Build_BoothSample02.loader.js"></script>
+    <script src= "Build/Build_BoothSample02_Home.loader.js"></script>
 
     <script>
 
@@ -41,15 +41,15 @@
       startButton.onclick = () => 
       {
         var buildUrl = "Build";
-        var loaderUrl = buildUrl + "/Build_BoothSample02.loader.js";
+        var loaderUrl = buildUrl + "/Build_BoothSample02_Home.loader.js";
 
         createUnityInstance
         (
           document.querySelector("#unity-canvas"), 
           {
-            dataUrl: buildUrl + "/Build_BoothSample02.data.unityweb",
-            frameworkUrl: buildUrl + "/Build_BoothSample02.framework.js.unityweb",
-            codeUrl: buildUrl + "/Build_BoothSample02.wasm.unityweb",
+            dataUrl: buildUrl + "/Build_BoothSample02_Home.data.unityweb",
+            frameworkUrl: buildUrl + "/Build_BoothSample02_Home.framework.js.unityweb",
+            codeUrl: buildUrl + "/Build_BoothSample02_Home.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "BoothSample02",
